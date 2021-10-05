@@ -10,11 +10,12 @@ public class Campionato {
 		int qtd = 0;
 		int i = 0;
 		double nota = 0.0;
-		double notaTotal=0.0;
+		double notaTotal = 0.0;
 		double media = 0.0;
 		double todasNotas[] = new double[6];
 		double maiorNota = todasNotas[0];
-		double menorNota = todasNotas.length;
+		// double menorNota = todasNotas.length;
+		double menorNota = 10.0;
 
 		try (s) {
 			while (qtd < 6) {
@@ -26,7 +27,7 @@ public class Campionato {
 					if (nota <= 10) {
 						todasNotas[qtd] = nota;
 					} else {
-						System.out.print("Inserir uma nota inferio ou igual a 10 .\n");
+						System.out.print("Inserir uma nota inferior ou igual a 10 .\n");
 						qtd += 5;
 
 					}
@@ -44,17 +45,14 @@ public class Campionato {
 					} else {
 
 					}
-					notaTotal+=todasNotas[x];
-				 media=(notaTotal-(maiorNota+menorNota))/4;
+					notaTotal += todasNotas[x];
+					media = (notaTotal - (maiorNota + menorNota)) / 4;
 
 				}
-				
-				
 
-				System.out.print("A nota final do atleta é : "+media);
+				System.out.print("A nota final do atleta é : " + media);
 
 			}
-			
 
 		} catch (Exception e) {
 			System.out.println(e);
